@@ -96,3 +96,24 @@ pre { background: var(--card); border: 1px solid var(--border); border-left: 3px
   table { font-size: 13px; } th, td { padding: .45rem .6rem; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+
+.pose-player { max-width: 1000px; margin: 1.5rem auto; border: 1px solid var(--border); background: var(--card); }
+.pose-bar, .pose-time, .pose-layers { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .5rem 1.4rem; padding: .7rem 1rem; font: 500 .85rem/1.5 var(--mono); }
+.pose-bar label, .pose-layers label { display: inline-flex; align-items: center; gap: .45rem; }
+.pose-player select, .pose-player button { background: var(--card); color: var(--ink); border: 1px solid var(--border); font: inherit; padding: .3rem .5rem; }
+.pose-player button { min-width: 4.6rem; cursor: pointer; }
+#pose-canvas { display: block; background: #f6f4ed; width: 100%; height: clamp(290px, 44vw, 500px); touch-action: none; cursor: grab; }
+#pose-canvas:active { cursor: grabbing; }
+.pose-time { justify-content: space-between; gap: .5rem; }
+#pose-seek { flex: 1; min-width: 48px; accent-color: var(--accent); }
+#pose-time { min-width: 6.3rem; text-align: right; }
+.pose-layers { padding-top: 0; }
+.pose-layers input { accent-color: var(--accent); }
+.pose-readout, .pose-files { text-align: center; margin: .2rem .8rem .7rem; }
+.pose-readout { font: 500 .85rem/1.6 var(--mono); }
+.pose-files { font-size: .95rem; }
+@media (max-width: 600px) {
+  .pose-time, .pose-bar, .pose-layers { padding: .55rem; gap: .4rem .65rem; font-size: .75rem; }
+  .pose-bar { justify-content: flex-start; }
+  .pose-readout { font-size: .75rem; }
+}

@@ -21,7 +21,7 @@
 <body>
 <header class="topbar">
   <a class="wordmark" href="https://www.goedelmachines.com/" aria-label="Gödel Machines"><span class="br">⟨</span>GÖDEL MACHINES<span class="br">⟩</span></a>
-  <nav class="toplinks" aria-label="Sections"><a href="#abstract">Abstract</a><a href="#scaling">Scaling</a><a href="#hardware">Robot</a><a href="#gaits">Gaits</a><a href="#bibtex">BibTeX</a></nav>
+  <nav class="toplinks" aria-label="Sections"><a href="#abstract">Abstract</a><a href="#scaling">Scaling</a><a href="#pose-overlay">3D replay</a><a href="#hardware">Robot</a><a href="#gaits">Gaits</a><a href="#bibtex">BibTeX</a></nav>
 </header>
 
 <main id="top">
@@ -44,6 +44,39 @@
   <figure><video aria-label="Filmed 2 m walk, neural forecast, and MuJoCo replay with front-left thigh encoder trace" controls playsinline poster="assets/walk-comparison.jpg" preload="metadata"><source src="assets/walk-comparison.mp4" type="video/mp4"></video>
   <figcaption><strong>One walk, three views.</strong> The Go2 received a 0.5 m/s command toward a 2 m odometry target. The 120M model and MuJoCo replay its recorded joint targets for 5.08 s. The plot tracks the front-left thigh against its encoder. Across all 12 joints, RMSE was <strong>0.0444 rad</strong> for the neural forecast and <strong>0.0628 rad</strong> for MuJoCo with the recorded gains.</figcaption></figure>
   <p class="note center">Both rendered bodies are shown at a fixed position and heading to compare joint motion and tilt. The neural model has no global position output. The iPhone view is aligned to command onset using host timestamps. Camera transport delay is unknown. <a href="assets/walk.mp4">Full camera recording, including settling</a></p>
+</section>
+
+<section class="sec band pose-section" id="pose-overlay" aria-labelledby="pose-heading">
+  <div class="reading">
+    <h2 id="pose-heading">3D pose overlay</h2>
+    <p>Rotate the three poses together. The dark skeleton comes from the Go2’s joint encoders and IMU. Orange and teal show where the 120M model and MuJoCo place the same joints and feet under the recorded commands.</p>
+  </div>
+  <div class="pose-player">
+    <div class="pose-bar">
+      <label>Trial <select id="pose-trial"><option value="walk">2 m stock walk</option><option value="static-walk">StaticWalk request</option><option value="trot-run">TrotRun request</option></select></label>
+      <label>View <select id="pose-view"><option value="oblique">Oblique</option><option value="side">Side</option><option value="front">Front</option><option value="top">Top</option></select></label>
+      <label>Foot trail <select id="pose-foot"><option value="0">Front left</option><option value="1">Front right</option><option value="2">Rear left</option><option value="3">Rear right</option></select></label>
+    </div>
+    <canvas id="pose-canvas" tabindex="0" aria-label="Superimposed 3D Go2 poses. Drag or use arrow keys to rotate. Preset views are available above."></canvas>
+    <div class="pose-time">
+      <button id="pose-play" type="button">Play</button>
+      <input id="pose-seek" type="range" min="0" max="0" value="0" step="1" aria-label="Replay frame">
+      <output id="pose-time">Loading…</output>
+      <select id="pose-speed" aria-label="Playback speed"><option value="1">1×</option><option value=".5">0.5×</option><option value=".25">0.25×</option></select>
+    </div>
+    <div class="pose-layers" aria-label="Visible pose layers">
+      <label><input type="checkbox" checked value="telemetry"> Robot telemetry</label>
+      <label><input type="checkbox" checked value="neural"> 120M world model</label>
+      <label><input type="checkbox" checked value="mujoco"> MuJoCo</label>
+    </div>
+    <p id="pose-readout" class="pose-readout"></p>
+    <p class="pose-files"><a id="pose-movie" href="assets/walk-overlay.mp4">Watch overlay as MP4</a> · <a id="pose-data" download href="assets/walk-poses.json">Download 3D coordinates</a></p>
+  </div>
+  <div class="reading"><div class="tablewrap"><table><caption>3D foot-center error against the telemetry reconstruction (cm RMS)</caption>
+    <thead><tr><th>Recorded trial</th><th>120M neural</th><th>MuJoCo</th></tr></thead>
+    <tbody><tr><td>2 m walk · 5.08 s</td><td>2.76</td><td>3.65</td></tr><tr><td>StaticWalk · 1.30 s</td><td>6.20</td><td>18.27</td></tr><tr><td>TrotRun · 2.00 s</td><td>8.09</td><td>44.15</td></tr></tbody></table></div>
+    <p class="note">Each row is one recording. We pool the squared 3D distances for all four foot centers across forecast frames, then take the square root. The initial pose is shared and excluded.</p></div>
+  <div class="reading"><p class="note">All layers use the robot’s measured heading, controller odometry and reported body height. Each layer supplies its own tilt and 12 joint angles. Foot positions come from forward kinematics at 50 Hz, so their separation measures limb and tilt error under that shared placement. The traces follow the selected foot center over the preceding 0.4 s. The floor grid is spaced at 2 ft. <a href="https://github.com/unitreerobotics/unitree_ros/blob/a3b70cae6fd4a82c0e1ece633d5c6f97e88c9d76/robots/go2_description/urdf/go2_description.urdf">Unitree Go2 URDF</a></p></div>
 </section>
 
 <section class="band" id="abstract"><div class="reading">
@@ -102,5 +135,6 @@
   <a class="wordmark" href="https://www.goedelmachines.com/"><span class="br">⟨</span>GÖDEL MACHINES<span class="br">⟩</span></a>
   <p>Layout follows the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a> and <a href="https://nerfies.github.io/">Nerfies</a>, licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Icons: <a href="https://primer.style/octicons/">Octicons</a> (MIT) and the Hugging Face logo.</p>
 </footer>
+<script src="pose.js" defer></script>
 </body>
 </html>
