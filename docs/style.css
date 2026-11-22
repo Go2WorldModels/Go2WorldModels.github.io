@@ -1,1 +1,45 @@
-:root{color-scheme:light;--ink:#152b30;--muted:#425c61;--line:#cbd6d5;--accent:#00635e;--paper:#fcfdfb}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:1.065rem/1.57 "Source Sans 3","Segoe UI",sans-serif}header,main,footer{width:min(1180px,92vw);margin:auto}header{padding:1.15rem 0;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{font:700 1.3rem Georgia,serif;color:var(--ink);text-decoration:none}nav,.actions,.downloads{display:flex;gap:1.35rem;flex-wrap:wrap}nav a,.actions a,.downloads a{font-weight:600}a{color:var(--accent);text-underline-offset:.2em}a:focus-visible,video:focus-visible{outline:3px solid #b52f15;outline-offset:3px}section{padding:3.5rem 0;border-bottom:1px solid var(--line);scroll-margin-top:1rem}.hero,.band,.clips{display:grid;grid-template-columns:.94fr 1.06fr;align-items:center;gap:clamp(1.5rem,5vw,4.5rem)}.hero{padding:4.2rem 0}.meta,.note,figcaption,footer{color:var(--muted);font-size:.93rem}h1,h2{font-family:"Source Serif 4",Georgia,serif;font-weight:500;line-height:1.06;letter-spacing:-.033em;margin:0 0 1.1rem}h1{font-size:clamp(2.9rem,4.8vw,4.65rem)}h2{font-size:clamp(2rem,3.2vw,3rem)}.lead{font-size:1.25rem}.actions{align-items:center;margin:1.6rem 0 .5rem}.primary{background:var(--ink);color:white;padding:.56rem .95rem;text-decoration:none}.equation{padding:.75rem 0;font:1.21rem Georgia,serif}.inset{padding:.6rem 0}.clips{grid-template-columns:1fr 1fr;align-items:start;gap:1.5rem}figure{margin:0}img,video{width:100%;display:block;height:auto}video{background:#111;aspect-ratio:16/9}figcaption{padding-top:.65rem}.measure{max-width:82ch;margin:2rem 0}table{font-size:.96rem;border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}caption{text-align:left;font-weight:650}td,th{border-bottom:1px solid var(--line);padding:.38rem 0;text-align:right}td:first-child,th:first-child{text-align:left}.downloads{row-gap:.8rem}footer{padding:1.3rem 0 2.6rem}@media(max-width:760px){.hero,.band,.clips{grid-template-columns:1fr}.hero,section{padding:2rem 0}header{align-items:start}nav{gap:.65rem;font-size:.9rem}.clips{gap:1.4rem}.hero figure{margin-top:.35rem}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+:root { --background-secondary: #f7f8fa; --text-primary: #252628; --primary-color: #165e9b; }
+.publication-header .hero-body { padding: 3.8rem 1.25rem 1rem; }
+.title.publication-title { margin-bottom: .65rem !important; letter-spacing: -.035em; }
+.publication-title + .paper-subtitle { margin: 0 auto 1.4rem; font-size: clamp(1.1rem, 2vw, 1.52rem); }
+.publication-authors { margin-bottom: .1rem; }
+.affiliation { margin-bottom: .8rem; }
+.publication-links .button { border-radius: 999px !important; box-shadow: none; }
+.link-block { display: inline-block; }
+.teaser .hero-body { padding: 1rem 1.5rem 2.6rem; }
+.teaser .container { width: 100%; max-width: 850px; }
+figure { margin: 1.5rem auto 0; text-align: center; }
+.teaser figure { margin: 0; }
+figure video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #1f2328; border-radius: 6px; }
+figcaption, .note { font-size: .95rem; line-height: 1.5; color: #50565d; }
+figcaption { margin: .65rem auto 0; max-width: 78ch; }
+.reading { margin-inline: auto; max-width: 48rem; }
+.content p, .reading p { line-height: 1.65; }
+.section { padding: 3.25rem 1.4rem; }
+.title.is-3::after { display: none; }
+.title.is-3 { padding-bottom: 0; margin-bottom: 1.5rem !important; }
+figure img { max-width: min(100%, 780px); height: auto; }
+.clips { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.25rem; }
+.clips + .note { text-align: center; margin-top: 1rem; }
+.measure { padding-top: 1.4rem; }
+.equation { font: clamp(1rem, 2.5vw, 1.35rem) Georgia, serif; text-align: center; padding: .85rem .2rem; }
+table { font-variant-numeric: tabular-nums; }
+caption { font-weight: 600; margin-bottom: .5rem; }
+.content table th, .content table td { text-align: right; }
+.content table th:first-child, .content table td:first-child { text-align: left; }
+#release pre { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.55; }
+.cite-download { margin-top: .65rem; }
+.footer .lab-logo { width: 140px; height: auto; margin-bottom: .8rem; }
+.footer p { font-size: .9rem; }
+@media (max-width: 700px) {
+ .publication-header .hero-body { padding: 2.5rem 1rem .25rem; }
+ .teaser .hero-body { padding: 1rem 1rem 2.2rem; }
+ .clips { grid-template-columns: 1fr; gap: .4rem; }
+ .content table { font-size: .92rem; }
+ .section { padding: 2.5rem 1.1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+ html { scroll-behavior: auto; }
+ .hero, .section { animation: none; }
+ .button { transition: none !important; }
+}

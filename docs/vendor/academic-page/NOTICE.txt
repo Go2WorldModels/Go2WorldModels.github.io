@@ -1,0 +1,6 @@
+The page layout and template.css derive from the Academic Project Page Template by Eliahu Horwitz, itself based on Nerfies.
+https://github.com/eliahuhorwitz/Academic-project-page-template/tree/d38af1ccae1ce82c3404d2820c4c646afd409f81
+https://nerfies.github.io/
+Template and adapted layout: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/
+Adaptations include the project header, results and media sections, and citation block.
+Bulma v0.9.1 is licensed under the MIT License, reproduced in BULMA-LICENSE.
