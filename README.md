@@ -32,18 +32,6 @@ With the recorded scan the flagship scores 0.131 and 0.136. With zero scans the 
 
 `model.forecast(history, history_actions, future_actions, scans=None)` takes FP32 PyTorch tensors on the model’s device and returns `[B,T,30]` in physical units. Use the history and target order in [schema.json](schema.json). The 50 historical commands drive the first 50 readings to the following readings. Forecast row zero is the reading one tick after future command zero. For the scan family `scans[b,t]` is the terrain encoding at the pose where future command `t` takes effect. These future scans were available in the simulated evaluation. To forecast on robot logs without scans, select a proprioceptive checkpoint.
 
-## Reproduce the paper
-
-The paper archive contains all per-shard scaling scores, hardware and simulated replay panels, table sources and plotting programs. From the repository root:
-
-```sh
-mkdir -p reproduction
-tar -xzf docs/arxiv-source.tar.gz -C reproduction
-(cd reproduction && python anc/scaling.py && python anc/transfer_figure.py && python anc/hardware_figure.py && python anc/replay_tables.py)
-```
-
-The 96-shard scaling fit can be reproduced from the measured errors. The full pretraining corpus and original 24,576-window mixed-terrain evaluation cache are separate from this distribution. The physical comparisons use one robot and previously recorded commands. The two short mode names refer to acknowledged SDK requests. The eight T2 gaits use a MuJoCo reference. Open [the numerical index](docs/results.html) to inspect each evaluated model and case.
-
 ## Project page
 
 The static project page, three silent on-robot videos, experimental plots, paper, and citation are in [docs](docs/index.html). The site works from a local checkout. For GitHub Pages use the `main` branch and `/docs` publishing source. To serve a local preview, run `python -m http.server --directory docs 8000` and open localhost on port 8000.
