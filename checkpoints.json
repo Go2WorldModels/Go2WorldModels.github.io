@@ -1,0 +1,355 @@
+{
+  "format_version": 1,
+  "checkpoints": [
+    {
+      "id": "scan-w1024-b2500",
+      "config": "sweep/w1024/b2500/config.json",
+      "weights": "sweep/w1024/b2500/model.safetensors",
+      "sha256": "87cd8e8c04d50a16caf31594eab2e4e48bf4447258e84474ea220ca61e690930",
+      "source_sha256": "64eae09465c0530db3bc1b769bf44edd247806bc08212a2170c154aaa8458e3b",
+      "bytes": 33004280,
+      "exposures": 360448000,
+      "per_step_parameters": 8183838,
+      "simulation_nrmse": {
+        "onestep": 0.28444256286031744,
+        "roll_1s": 0.4490738324736475,
+        "roll_3s": 0.5139076922437426
+      }
+    },
+    {
+      "id": "scan-w1024-b5000",
+      "config": "sweep/w1024/b5000/config.json",
+      "weights": "sweep/w1024/b5000/model.safetensors",
+      "sha256": "0f1ae178729e6fe5d08610fc463d69ed8838a7b96e15071f6f23dbbce96c5ff3",
+      "source_sha256": "84e2e5a351588b1e968938098494df32be966997e9a9f3a8c1466d0ef4b1360a",
+      "bytes": 33004280,
+      "exposures": 720896000,
+      "per_step_parameters": 8183838,
+      "simulation_nrmse": {
+        "onestep": 0.48973568095810593,
+        "roll_1s": 0.616919931998372,
+        "roll_3s": 0.7331135885986342
+      }
+    },
+    {
+      "id": "scan-w1024-b10000",
+      "config": "sweep/w1024/b10000/config.json",
+      "weights": "sweep/w1024/b10000/model.safetensors",
+      "sha256": "a8219abe98c19bc5fd82ce7b39960a0bee7f0dd283141660545557d211e64f38",
+      "source_sha256": "5ada4925fa59d3211139faf97d66e9c3b420e607549ac85197940570aa992e65",
+      "bytes": 33004280,
+      "exposures": 1441792000,
+      "per_step_parameters": 8183838,
+      "simulation_nrmse": {
+        "onestep": 0.2253121838012633,
+        "roll_1s": 0.3721945402091521,
+        "roll_3s": 0.42950533251788897
+      }
+    },
+    {
+      "id": "scan-w1024-b20000",
+      "config": "sweep/w1024/b20000/config.json",
+      "weights": "sweep/w1024/b20000/model.safetensors",
+      "sha256": "1735ddd4cbe8e117e44129bbab5e5f5e37e2ea2bd5814ece357f446bc9c81961",
+      "source_sha256": "1881020aa0159a185f75137277c6cb6c1f9ef1bf81f57276901a77960a52941b",
+      "bytes": 33004280,
+      "exposures": 2883584000,
+      "per_step_parameters": 8183838,
+      "simulation_nrmse": {
+        "onestep": 0.20922125307375844,
+        "roll_1s": 0.3588268202651757,
+        "roll_3s": 0.4058283330003571
+      }
+    },
+    {
+      "id": "proprio-w1024",
+      "config": "proprio/w1024/config.json",
+      "weights": "proprio/w1024/model.safetensors",
+      "sha256": "2ecf55b597bd546ded630a41cb47fb8dbdde6c92564557277d654a015f9959f6",
+      "source_sha256": "256eda4f11f3824f5b635f5b1aa9edca6dea4d0d271044240e9761b7111c611b",
+      "bytes": 32238328,
+      "parent": "scan-w1024-b20000",
+      "projection_updates": 32
+    },
+    {
+      "id": "scan-w1440-b2500",
+      "config": "sweep/w1440/b2500/config.json",
+      "weights": "sweep/w1440/b2500/model.safetensors",
+      "sha256": "9d30ba06c2a06998970187264cd4bcc19445e11217420868d1c6ec9ff832be84",
+      "source_sha256": "3540e09118890b1b7b024939db15c119b049c38c66d6d6c6d721f745fbd6da93",
+      "bytes": 62834816,
+      "exposures": 360448000,
+      "per_step_parameters": 15641470,
+      "simulation_nrmse": {
+        "onestep": 0.279558497799638,
+        "roll_1s": 0.43840915073256487,
+        "roll_3s": 0.509807572470828
+      }
+    },
+    {
+      "id": "scan-w1440-b5000",
+      "config": "sweep/w1440/b5000/config.json",
+      "weights": "sweep/w1440/b5000/model.safetensors",
+      "sha256": "f7441fd7e9faecc9e1e4acdddc913a0b79c6795357d853c44a830ecb93ae79d5",
+      "source_sha256": "f5dd894bef2ea2a9a6e5b47d4da93b3849bb32b6b6db95ef7d46a7ed84289d6f",
+      "bytes": 62834816,
+      "exposures": 720896000,
+      "per_step_parameters": 15641470,
+      "simulation_nrmse": {
+        "onestep": 0.2429790905906297,
+        "roll_1s": 0.398500912231115,
+        "roll_3s": 0.4607615654761353
+      }
+    },
+    {
+      "id": "scan-w1440-b10000",
+      "config": "sweep/w1440/b10000/config.json",
+      "weights": "sweep/w1440/b10000/model.safetensors",
+      "sha256": "e1373cd03b07f6d98cbae33b8d732da3a9dec4c039c1e6b566cda9e4378475b8",
+      "source_sha256": "d7b8273a5d8eac24e092285d1c217e32df46a6f27bc1d0b9ebbe7c6615332660",
+      "bytes": 62834816,
+      "exposures": 1441792000,
+      "per_step_parameters": 15641470,
+      "simulation_nrmse": {
+        "onestep": 0.22334331669377405,
+        "roll_1s": 0.36770974527217365,
+        "roll_3s": 0.4325066534325287
+      }
+    },
+    {
+      "id": "scan-w1440-b20000",
+      "config": "sweep/w1440/b20000/config.json",
+      "weights": "sweep/w1440/b20000/model.safetensors",
+      "sha256": "d36c42ed9c4ab88ff96a14aec64621fadd968d0b4eca708c5db70214459a4616",
+      "source_sha256": "304df619bc319f6334dc46e7dbfedd5661976183e1b48a03503a2e10c046ab95",
+      "bytes": 62834816,
+      "exposures": 2883584000,
+      "per_step_parameters": 15641470,
+      "simulation_nrmse": {
+        "onestep": 0.20053412219029784,
+        "roll_1s": 0.346832655244695,
+        "roll_3s": 0.39193082978996735
+      }
+    },
+    {
+      "id": "proprio-w1440",
+      "config": "proprio/w1440/config.json",
+      "weights": "proprio/w1440/model.safetensors",
+      "sha256": "3cf20b19b3a63e60f54a568760a9175e9ec585fcff26099ffdcdfd5a45e28701",
+      "source_sha256": "9fa05a0df39f9aec6d5812774f617897da1fefcbe194583cafc79cf3368fbbc5",
+      "bytes": 61757696,
+      "parent": "scan-w1440-b20000",
+      "projection_updates": 32
+    },
+    {
+      "id": "scan-w2048-b2500",
+      "config": "sweep/w2048/b2500/config.json",
+      "weights": "sweep/w2048/b2500/model.safetensors",
+      "sha256": "56b633e200c8fd526c75f55ff90fe2deca49297cb655c1ef8fad0e1ca45f6fa8",
+      "source_sha256": "ed2d50a5740ba4fc2fd93b468653d3186616a49d246477142f41b69ce34eda2f",
+      "bytes": 123865912,
+      "exposures": 360448000,
+      "per_step_parameters": 30899230,
+      "simulation_nrmse": {
+        "onestep": 0.2751514224575509,
+        "roll_1s": 0.43811949313833276,
+        "roll_3s": 0.5010570853962342
+      }
+    },
+    {
+      "id": "scan-w2048-b5000",
+      "config": "sweep/w2048/b5000/config.json",
+      "weights": "sweep/w2048/b5000/model.safetensors",
+      "sha256": "6f54d9446d8b0c3fc28c03d2d3183932bf2c611eb8a1afdd1813db2108ecc817",
+      "source_sha256": "db68a2be1baa2b22ab2180e8e67c8a9ccf2dd43d6516b325dff6dd03e6dffe1d",
+      "bytes": 123865912,
+      "exposures": 720896000,
+      "per_step_parameters": 30899230,
+      "simulation_nrmse": {
+        "onestep": 0.23538421678845511,
+        "roll_1s": 0.38982948020591335,
+        "roll_3s": 0.4570106531204611
+      }
+    },
+    {
+      "id": "scan-w2048-b10000",
+      "config": "sweep/w2048/b10000/config.json",
+      "weights": "sweep/w2048/b10000/model.safetensors",
+      "sha256": "e5774d695932f3440e35ce99c612a6caa60ff7b0dd8aeb286c58904ebcbcd451",
+      "source_sha256": "b61e584e258017b52d31988dc1e1ff3cc7ce7b5a66928fbf42631b5fa1fef9b8",
+      "bytes": 123865912,
+      "exposures": 1441792000,
+      "per_step_parameters": 30899230,
+      "simulation_nrmse": {
+        "onestep": 0.20982992969264072,
+        "roll_1s": 0.36512748983800897,
+        "roll_3s": 0.4047385427578098
+      }
+    },
+    {
+      "id": "scan-w2048-b20000",
+      "config": "sweep/w2048/b20000/config.json",
+      "weights": "sweep/w2048/b20000/model.safetensors",
+      "sha256": "c796a76e67f7cdb17a73378c6ccc95e6693bc0ca8e18433173dc592c55f3f7be",
+      "source_sha256": "d3ad3d4ee9fb324f7778715451f832eb7c55124d897e6faac41c110075339304",
+      "bytes": 123865912,
+      "exposures": 2883584000,
+      "per_step_parameters": 30899230,
+      "simulation_nrmse": {
+        "onestep": 0.19346789424561076,
+        "roll_1s": 0.33975039253446565,
+        "roll_3s": 0.37961311375012563
+      }
+    },
+    {
+      "id": "proprio-w2048",
+      "config": "proprio/w2048/config.json",
+      "weights": "proprio/w2048/model.safetensors",
+      "sha256": "452d8d86db0185480b27a3a16a20ab95ab1878b0a7579ad6c2693c54325ed841",
+      "source_sha256": "ae741d7831cf70f95c3c9ab05f2c2fbf7ebd3ce11ab970b33ce2d8c24e4a4556",
+      "bytes": 122334008,
+      "parent": "scan-w2048-b20000",
+      "projection_updates": 32
+    },
+    {
+      "id": "scan-w2880-b2500",
+      "config": "sweep/w2880/b2500/config.json",
+      "weights": "sweep/w2880/b2500/model.safetensors",
+      "sha256": "2c1dcef0ac0c6629070553f57a8244d7d808f27775067dd2aca7b6611a6e4e63",
+      "source_sha256": "7bf4cd8d28692637b860295e4b92d745dc178e7f2013db0244878ddedcfce354",
+      "bytes": 240928336,
+      "exposures": 360448000,
+      "per_step_parameters": 60164830,
+      "simulation_nrmse": {
+        "onestep": 0.2711192779274247,
+        "roll_1s": 0.4312436843082596,
+        "roll_3s": 0.5054169618155254
+      }
+    },
+    {
+      "id": "scan-w2880-b5000",
+      "config": "sweep/w2880/b5000/config.json",
+      "weights": "sweep/w2880/b5000/model.safetensors",
+      "sha256": "7c0079fe3450137e049edce9bc565e4679a07dd0a984e542dd1840cda89cdb97",
+      "source_sha256": "3df0c5fbe63c15dcab2cda8c2b6bfcd4c5912939cf77724bba57b3b210f00e30",
+      "bytes": 240928336,
+      "exposures": 720896000,
+      "per_step_parameters": 60164830,
+      "simulation_nrmse": {
+        "onestep": 0.24236692382217195,
+        "roll_1s": 0.3994203697596654,
+        "roll_3s": 0.4606937784730831
+      }
+    },
+    {
+      "id": "scan-w2880-b10000",
+      "config": "sweep/w2880/b10000/config.json",
+      "weights": "sweep/w2880/b10000/model.safetensors",
+      "sha256": "c14f825ca4d23095d9ea6a877672c8e2bf76c637351c5a1736118891b069f9b0",
+      "source_sha256": "8b542f39418cf596d625756d85e9c3f88405dc5aa1eb516843191684df331359",
+      "bytes": 240928336,
+      "exposures": 1441792000,
+      "per_step_parameters": 60164830,
+      "simulation_nrmse": {
+        "onestep": 0.2122204055704851,
+        "roll_1s": 0.35538136264794185,
+        "roll_3s": 0.4156515695320203
+      }
+    },
+    {
+      "id": "scan-w2880-b20000",
+      "config": "sweep/w2880/b20000/config.json",
+      "weights": "sweep/w2880/b20000/model.safetensors",
+      "sha256": "c8cc53984398205f9821f4e95d87dcd0ecbf9bfc254c471ee2c4982a489342a3",
+      "source_sha256": "2f791168f2859e04e168a4d2545863e04b2398bc3d3a883301a21b1e1262f947",
+      "bytes": 240928336,
+      "exposures": 2883584000,
+      "per_step_parameters": 60164830,
+      "simulation_nrmse": {
+        "onestep": 0.2045274176845762,
+        "roll_1s": 0.3485905641477917,
+        "roll_3s": 0.3993877364776948
+      }
+    },
+    {
+      "id": "proprio-w2880",
+      "config": "proprio/w2880/config.json",
+      "weights": "proprio/w2880/model.safetensors",
+      "sha256": "8323047b1709d8e0058f02072ec8b2f5efbc844f096a555811b0e454f64c8ca1",
+      "source_sha256": "fd42b45e5b92bf9caca601924dcb6841829a441452f2a380563d85afeb79c56a",
+      "bytes": 238774096,
+      "parent": "scan-w2880-b20000",
+      "projection_updates": 32
+    },
+    {
+      "id": "scan-w4096-b2500",
+      "config": "sweep/w4096/b2500/config.json",
+      "weights": "sweep/w4096/b2500/model.safetensors",
+      "sha256": "1d68034b53b65e2ce9baa31698b88910635c3aa7032aedf525a732f7ca4ff98c",
+      "source_sha256": "4a921451dde56d46972554334cf4b39c971425c42fe67ad0eedc3039a90f63be",
+      "bytes": 481749856,
+      "exposures": 360448000,
+      "per_step_parameters": 120370206,
+      "simulation_nrmse": {
+        "onestep": 0.2684053316040712,
+        "roll_1s": 0.4366485662208553,
+        "roll_3s": 0.4984547000696444
+      }
+    },
+    {
+      "id": "scan-w4096-b5000",
+      "config": "sweep/w4096/b5000/config.json",
+      "weights": "sweep/w4096/b5000/model.safetensors",
+      "sha256": "588b44c85fa0cab7d2103251662f3c2f66d3aed57b7b4363f5d868fe0efbaec5",
+      "source_sha256": "439aec8a694e9e4d7cd68452254748e02b21f190966692f8b0898c02d43a516d",
+      "bytes": 481749856,
+      "exposures": 720896000,
+      "per_step_parameters": 120370206,
+      "simulation_nrmse": {
+        "onestep": 0.23149866465538485,
+        "roll_1s": 0.38853073240236863,
+        "roll_3s": 0.45919180610651794
+      }
+    },
+    {
+      "id": "scan-w4096-b10000",
+      "config": "sweep/w4096/b10000/config.json",
+      "weights": "sweep/w4096/b10000/model.safetensors",
+      "sha256": "631524c816fc72c728868f7055d8b99d3b5a6c315c0aac99c9cf7311df78c239",
+      "source_sha256": "6c39bc4d7a5c0a67f75003487e6957c56f60977cd68b9bbbe1e5e2e6ecf680d1",
+      "bytes": 481749856,
+      "exposures": 1441792000,
+      "per_step_parameters": 120370206,
+      "simulation_nrmse": {
+        "onestep": 0.20511882883187368,
+        "roll_1s": 0.3526542399588831,
+        "roll_3s": 0.4005924595028812
+      }
+    },
+    {
+      "id": "scan-w4096-b20000",
+      "config": "config.json",
+      "weights": "model.safetensors",
+      "sha256": "21b3935caf1157d95f1ea785fe7d0898bbe55c13d6719aeb7f91ce73882bc245",
+      "source_sha256": "b0457edeba458f95866120f1c70392170748a7ca2c016199f91265ab35350c30",
+      "bytes": 481749856,
+      "exposures": 2883584000,
+      "per_step_parameters": 120370206,
+      "simulation_nrmse": {
+        "onestep": 0.1832765894586682,
+        "roll_1s": 0.32094492665605473,
+        "roll_3s": 0.36398078149418195
+      }
+    },
+    {
+      "id": "proprio-w4096",
+      "config": "proprio/config.json",
+      "weights": "proprio/model.safetensors",
+      "sha256": "1470ff40f7876f3c3284fc16e391cbb03465cbaf64dd7d79e597108e2d91aad0",
+      "source_sha256": "df624d21db28ccba61dcc3d813c9f4ba7da1110b2d0f63945a6a7097156819f2",
+      "bytes": 478686048,
+      "parent": "scan-w4096-b20000",
+      "projection_updates": 32
+    }
+  ]
+}

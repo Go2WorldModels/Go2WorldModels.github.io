@@ -1,0 +1,65 @@
+{
+  "rate_hz": 50,
+  "history_readings": 51,
+  "history_commands": 50,
+  "observation": [
+    {
+      "channels": [
+        0,
+        3
+      ],
+      "name": "world_up_in_body",
+      "unit": "unit vector"
+    },
+    {
+      "channels": [
+        3,
+        6
+      ],
+      "name": "body_gyro_xyz",
+      "unit": "rad/s"
+    },
+    {
+      "channels": [
+        6,
+        18
+      ],
+      "name": "joint_angles",
+      "unit": "rad"
+    },
+    {
+      "channels": [
+        18,
+        30
+      ],
+      "name": "joint_velocities",
+      "unit": "rad/s"
+    }
+  ],
+  "channel_ranges": "zero-based, end exclusive",
+  "action": "absolute joint-angle target in radians",
+  "joints": [
+    "FL_hip_joint",
+    "FR_hip_joint",
+    "RL_hip_joint",
+    "RR_hip_joint",
+    "FL_thigh_joint",
+    "FR_thigh_joint",
+    "RL_thigh_joint",
+    "RR_thigh_joint",
+    "FL_calf_joint",
+    "FR_calf_joint",
+    "RL_calf_joint",
+    "RR_calf_joint"
+  ],
+  "scan": {
+    "grid": [
+      17,
+      11
+    ],
+    "pitch_m": 0.1,
+    "order": "x fastest",
+    "frame": "yaw-aligned",
+    "encoding": "clip(base_z - ground_z - 0.5, -1, 1)"
+  }
+}

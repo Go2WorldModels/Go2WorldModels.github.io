@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite the associated preprint when using these models."
+title: "Scaling Quadruped World Models"
+type: software
+version: 0.1.0
+authors:
+  - family-names: Kompella
+    given-names: Ramakrishna
+    affiliation: Gödel Machines
