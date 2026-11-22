@@ -34,4 +34,4 @@ With the recorded scan the flagship scores 0.131 and 0.136. With zero scans the 
 
 ## Project page
 
-The static project page, three silent on-robot videos, experimental plots, paper, and citation are in [docs](docs/index.html). The site works from a local checkout. For GitHub Pages use the `main` branch and `/docs` publishing source. To serve a local preview, run `python -m http.server --directory docs 8000` and open localhost on port 8000.
+The static project page, three synchronized real Go2 / 120M neural / MuJoCo comparison videos, the original camera recordings, experimental plots, paper, and citation are in [docs](docs/index.html). The site works from a local checkout. For GitHub Pages use the `main` branch and `/docs` publishing source. To serve a local preview, run `python -m http.server --directory docs 8000` and open localhost on port 8000.

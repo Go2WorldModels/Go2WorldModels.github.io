@@ -10,7 +10,7 @@
 <meta name="citation_pdf_url" content="https://go2worldmodels.github.io/paper.pdf">
 <meta property="og:title" content="Scaling Quadruped World Models">
 <meta property="og:description" content="A 120-million-parameter predictive model of the Unitree Go2 · Gödel Machines">
-<meta property="og:image" content="https://go2worldmodels.github.io/assets/walk.jpg">
+<meta property="og:image" content="https://go2worldmodels.github.io/assets/walk-comparison.jpg">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon.png" type="image/png">
@@ -40,9 +40,10 @@
   </nav>
 </section>
 
-<section class="teaser" aria-label="Filmed Go2 walk">
-  <figure><video aria-label="Complete physical Go2 walk on a taped floor" controls playsinline poster="assets/walk.jpg" preload="none"><source src="assets/walk.mp4" type="video/mp4"></video>
-  <figcaption>Physical Go2 · 2 m odometry target · 0.5 m/s requested. The robot walks toward the camera and settles on the taped grid. Silent recording.</figcaption></figure>
+<section class="teaser" id="comparison" aria-label="Three-way comparison of the filmed 2 m walk">
+  <figure><video aria-label="Filmed 2 m walk, neural forecast, and MuJoCo replay with front-left thigh encoder trace" controls playsinline poster="assets/walk-comparison.jpg" preload="metadata"><source src="assets/walk-comparison.mp4" type="video/mp4"></video>
+  <figcaption><strong>One walk, three views.</strong> The Go2 received a 0.5 m/s command toward a 2 m odometry target. The 120M model and MuJoCo replay its recorded joint targets for 5.08 s. The plot tracks the front-left thigh against its encoder. Across all 12 joints, RMSE was <strong>0.0444 rad</strong> for the neural forecast and <strong>0.0628 rad</strong> for MuJoCo with the recorded gains.</figcaption></figure>
+  <p class="note center">Both rendered bodies are shown at a fixed position and heading to compare joint motion and tilt. The neural model has no global position output. The iPhone view is aligned to command onset using host timestamps. Camera transport delay is unknown. <a href="assets/walk.mp4">Full camera recording, including settling</a></p>
 </section>
 
 <section class="band" id="abstract"><div class="reading">
@@ -69,11 +70,11 @@
   </div>
   <figure class="plot"><a href="assets/hardware-joints.png"><img alt="Paired joint-angle errors by predictor for the nine individual SDK recordings and pooled result" src="assets/hardware-joints.png" loading="lazy"></a><figcaption>Each gray line joins predictions for one physical trial.</figcaption></figure>
   <div class="reading"><p>On the filmed walk above, the stationary foot-contact centroid moved an estimated <strong>2.335 m</strong> on the two-foot grid. Settled onboard odometry was <strong>2.035 m</strong>. The measurements refer to different points on the robot.</p></div>
-  <div class="clips">
-    <figure><video aria-label="Physical StaticWalk request" controls playsinline poster="assets/static-walk.jpg" preload="none"><source src="assets/static-walk.mp4" type="video/mp4"></video><figcaption><strong>StaticWalk request</strong> · The robot advances along the lane, reaching the distance stop at 0.459 m in 1.31 s.</figcaption></figure>
-    <figure><video aria-label="Physical TrotRun request" controls playsinline poster="assets/trot-run.jpg" preload="none"><source src="assets/trot-run.mp4" type="video/mp4"></video><figcaption><strong>TrotRun request</strong> · The robot advances along the lane until the time limit at 2.01 s, with 0.362 m of controller odometry.</figcaption></figure>
+  <div class="clips" id="named-comparisons">
+    <figure><video aria-label="StaticWalk SDK request with real Go2, neural forecast and MuJoCo replay" controls loop playsinline poster="assets/static-walk-comparison.jpg" preload="none"><source src="assets/static-walk-comparison.mp4" type="video/mp4"></video><figcaption><strong>StaticWalk request.</strong> The replay covers 1.30 s. The controller reached its distance stop at 0.459 m in 1.31 s. Across the 12 joints, RMSE was 0.128 rad for the neural model and 0.276 rad for MuJoCo. <a href="assets/static-walk.mp4">Full camera recording</a></figcaption></figure>
+    <figure><video aria-label="TrotRun SDK request with real Go2, neural forecast and MuJoCo replay" controls loop playsinline poster="assets/trot-run-comparison.jpg" preload="none"><source src="assets/trot-run-comparison.mp4" type="video/mp4"></video><figcaption><strong>TrotRun request.</strong> The replay covers 2.00 s. At the 2.01 s time limit, controller odometry read 0.362 m. MuJoCo rolls as the real robot stays upright. Mean body-up error was 77.7° for MuJoCo and 7.4° for the neural model. <a href="assets/trot-run.mp4">Full camera recording</a></figcaption></figure>
   </div>
-  <p class="note center">Both clips are silent. Each records one acknowledged SDK mode request. Independent footfall classification was unavailable.</p>
+  <p class="note center">Each clip shows one acknowledged SDK mode request. The 120M model receives the published joint targets. MuJoCo also receives the recorded gains, velocity targets, and feedforward torques. Both replays show pose in place. The gait labels come from the SDK requests. Independent footfall classifications are unavailable.</p>
 </section>
 
 <section class="sec" id="gaits">

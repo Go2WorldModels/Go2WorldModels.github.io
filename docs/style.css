@@ -46,7 +46,7 @@ strong { color: var(--ink); }
 .btn svg.hf { width: 19px; height: 19px; }
 
 /* sections */
-.teaser { max-width: 900px; margin: 0 auto; padding: .4rem 1.25rem 3rem; }
+.teaser { max-width: 1140px; margin: 0 auto; padding: .4rem 1.25rem 3rem; }
 .sec, .band { padding: 3.6rem 1.25rem; }
 .band { background: var(--band); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 #abstract { padding: 3.6rem 1.25rem; }
@@ -64,10 +64,10 @@ figure { margin: 1.8rem auto 0; text-align: center; }
 .teaser figure { margin: 0; }
 .plot a { display: inline-block; background: #fff; border: 1px solid var(--border); padding: .8rem; max-width: min(100%, 820px); }
 .plot img { display: block; max-width: 100%; height: auto; }
-figure video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #1f1e17; border: 1px solid var(--border); }
+figure video { display: block; width: 100%; aspect-ratio: 1440 / 554; background: #1f1e17; border: 1px solid var(--border); }
 figure + .reading { margin-top: 1.8rem; }
 figcaption { font: .9rem/1.5 var(--serif); color: var(--muted); max-width: 70ch; margin: .7rem auto 0; }
-.clips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem; max-width: 980px; margin: 1.6rem auto 1rem; }
+.clips { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; max-width: 1080px; margin: 1.6rem auto 1rem; }
 .clips figure { margin: 0; }
 
 /* table */
