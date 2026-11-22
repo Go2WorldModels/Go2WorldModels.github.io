@@ -10,7 +10,7 @@ Install with Python 3.10 or later in a virtual environment from this repositoryâ
 
 ```sh
 python -m pip install '.[hub,analysis]'
-hf download GoedelMachines/go2-world-models proprio/config.json proprio/model.safetensors manifest.json --local-dir checkpoints
+hf download GoedelMachines/go2-world-models --include 'proprio/config.json' 'proprio/model.pt' 'proprio/model.safetensors' 'manifest.json' --local-dir checkpoints
 python examples/forecast.py checkpoints/proprio --plot forecast.png
 python examples/evaluate.py checkpoints/proprio
 ```
@@ -18,7 +18,7 @@ python examples/evaluate.py checkpoints/proprio
 The example runs on a recorded, held-out **simulated** flat-ground segment. The evaluator runs all 32 validation worlds. The adapted flagship gives endpoint NRMSE of 0.613 and 1.009 at one and three seconds. The same loader accepts a local root or sweep directory for a scan-conditioned model. Those examples automatically use the aligned terrain measurement at each step.
 
 ```sh
-hf download GoedelMachines/go2-world-models config.json model.safetensors --local-dir checkpoints
+hf download GoedelMachines/go2-world-models --include 'config.json' 'model.pt' 'model.safetensors' --local-dir checkpoints
 python examples/forecast.py checkpoints
 python examples/evaluate.py checkpoints
 python examples/evaluate.py checkpoints --zero-scan

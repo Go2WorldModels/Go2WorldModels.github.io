@@ -84,11 +84,20 @@ class Go2Model(nn.Module):
 
 
 def load_model(directory, device="cpu"):
-    """Load a directory containing config.json and tensor-only model.safetensors."""
+    """Load a release directory containing a config and a SafeTensors or original PyTorch checkpoint."""
     directory = Path(directory)
     cfg = json.loads((directory / "config.json").read_text())
     if (cfg["format_version"], cfg["architecture"]) != (1, "go2_residual_gru"):
         raise ValueError("Unsupported model format")
     model = Go2Model(cfg["width"], cfg["depth"], cfg["inputs"])
-    model.load_state_dict(load_file(directory / "model.safetensors"), strict=True)
+    filename = cfg.get("weight_file")
+    if filename is None:
+        filename = "model.pt" if (directory / "model.pt").is_file() else "model.safetensors"
+    if filename == "model.pt":
+        state = torch.load(directory / filename, map_location="cpu", weights_only=True)["model"]
+    elif filename == "model.safetensors":
+        state = load_file(directory / filename)
+    else:
+        raise ValueError(f"Unknown checkpoint filename: {filename}")
+    model.load_state_dict(state, strict=True)
     return model.to(device).eval()

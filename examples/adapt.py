@@ -49,7 +49,7 @@ def adapt(parent_dir, output):
         torch.nn.utils.clip_grad_norm_(model.parameters(), 1., error_if_nonfinite=True)
         opt.step()
     output.mkdir(parents=True, exist_ok=False)
-    cfg.update(inputs="proprio", scan_dim=0, total_parameters=sum(p.numel() for p in model.parameters()))
+    cfg.update(inputs="proprio", weight_file="model.safetensors", scan_dim=0, total_parameters=sum(p.numel() for p in model.parameters()))
     (output/"config.json").write_text(json.dumps(cfg, indent=2) + "\n")
     save_file(model.state_dict(), str(output/"model.safetensors"), metadata={"format":"pt"})
 
