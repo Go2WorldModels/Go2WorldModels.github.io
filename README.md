@@ -2,7 +2,7 @@
 
 **Ramakrishna Kompella · Gödel Machines**
 
-Forecast 30 joint and body readings at 50 Hz. The 20 scan-conditioned checkpoints cover five widths and four training exposures. Five additional checkpoints forecast from proprioception and joint commands after projection-only adaptation. The model outputs joint angles, joint velocities, body gyro and the body-up vector. Code and examples run offline with local weights. [Checkpoint repository](https://huggingface.co/GoedelMachines/go2-world-models) · [Paper](docs/paper.pdf) · [Paper source and numerical supplement](docs/arxiv-source.tar.gz)
+Forecast 30 joint and body readings at 50 Hz. The 20 scan-conditioned checkpoints cover five widths and four training exposures. Five additional checkpoints forecast from proprioception and joint commands after projection-only adaptation. The model outputs joint angles, joint velocities, body gyro and the body-up vector. Code and examples run offline with local weights. [Checkpoint repository](https://huggingface.co/GoedelMachines/go2-world-models) · [Paper](docs/paper.pdf)
 
 ## First forecast
 
